@@ -1,67 +1,10 @@
-.review-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
+/* Review Card Styles */
+.rating .fa-star.filled {
+    color: #FFD700; /* Gold color for filled stars */
 }
 
-.review-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.review-card .review-image {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-    float: left;
-}
-
-.rating {
-    color: #FFD700; /* Gold color */
-}
-
-.review-text {
-    font-style: italic;
-}
-
-.card-header {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-}
-
-
-.rating {
-    display: inline-block;
-    font-size: 1.5rem;
-    position: relative;
-    color: #ddd; /* Default color for empty stars */
-}
-
-.rating .filled {
-    color: #FFD700; /* Color for filled stars */
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    transition: width 0.3s ease-in-out;
-}
-
-.rating .stars {
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-}
-
-.rating .empty {
-    display: inline-block;
+.rating .fa-star.empty {
+    color: #ddd; /* Gray color for empty stars */
 }
 
 .review-card {
@@ -96,4 +39,97 @@
     border-bottom: 1px solid #ddd;
     display: flex;
     align-items: center;
+}
+/* Social Media and Whatsapp */
+
+/* Social Media Widget */
+#social-media-widget {
+    position: fixed;
+    left: 20px; /* Distance from the left edge */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Size of the icon container */
+    height: 50px;
+    margin: 10px 0; /* Vertical spacing between icons */
+    background-color: #333;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px; /* Size of the icons */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon i {
+    margin: 0;
+}
+
+.social-icon.facebook {
+    background-color: #4267B2;
+}
+
+.social-icon.twitter {
+    background-color: #1da1f2;
+}
+
+.social-icon.instagram {
+    background-color: #E1306C;
+}
+
+.social-icon.linkedin {
+    background-color: #FF0000;
+}
+
+.social-icon:hover {
+    background-color: #555;
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* WhatsApp Widget */
+#whatsapp-widget {
+    position: fixed;
+    right: 20px; /* Distance from the right edge */
+    bottom: 20px; /* Distance from the bottom edge */
+    z-index: 1000;
+}
+
+.whatsapp-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px; /* Size of the icon container */
+    height: 60px;
+    background-color: #25D366; /* WhatsApp green color */
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px; /* Size of the icon */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow for better visibility */
+    animation: blink 1.5s infinite; /* Apply the blinking animation */
+}
+
+.whatsapp-icon i {
+    margin: 0;
+}
+
+.whatsapp-icon:hover {
+    background-color: #128C7E; /* Darker green on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Blinking Animation */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
 }
