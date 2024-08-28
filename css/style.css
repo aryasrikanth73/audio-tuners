@@ -230,7 +230,7 @@ a:hover, a:focus {
 	font-family: 'Martel Sans', sans-serif;
 	height: 44px;
 	line-height: 48px;
-	background: #36404b;
+	background: #3D5793;
 	letter-spacing: 0.5px;
 	position: relative;
 	z-index: 1;
@@ -265,7 +265,7 @@ a:hover, a:focus {
 	background: #A443D8;
 }
 .btn:hover i {
-	background: #36404b;
+	background: #3D5793;
 }
 .btn span {
 	float: right;
@@ -290,7 +290,7 @@ a:hover, a:focus {
 	transition: 0.4s ease-in-out;
 }
 .btn:hover span:before {
-	border-color: transparent transparent #36404b transparent;
+	border-color: transparent transparent #3D5793 transparent;
 }
 section,
 .section {
@@ -328,7 +328,7 @@ section,
 .heading h5 {
 	font-weight: 900;
 	height: 53px;
-	background: #36404b;
+	background: #3D5793;
 	margin: 0px;
 	line-height: 58px;
 	letter-spacing: 1px;
@@ -345,7 +345,7 @@ section,
 	left: -20px;
 	border-style: solid;
 	border-width: 0 0 53px 20px;
-	border-color: transparent transparent #36404b transparent;
+	border-color: transparent transparent #3D5793 transparent;
 	position: absolute;
 }
 .heading h5:after {
@@ -354,7 +354,7 @@ section,
 	right: -20px;
 	border-style: solid;
 	border-width: 53px 20px 0 0;
-	border-color: #36404b transparent transparent transparent;
+	border-color: #3D5793 transparent transparent transparent;
 	position: absolute;
 }
 .heading p {
@@ -404,7 +404,7 @@ header {
 	padding-top: 30px;
 }
 header .navbar {
-	background: #36404b;
+	background: #3D5793;
 	border: none;
 	margin: 0px;
 	margin-top: 35px;
@@ -751,13 +751,13 @@ header .quotes a:hover {
 	transition: 0.4s ease-in-out;
 }
 .services li article:hover h6 {
-	background: #36404b;
+	background: #3D5793;
 }
 .services li article:hover .icon {
-	background: #36404b;
+	background: #3D5793;
 }
 .services li article:hover .icon:before {
-	border-color: transparent transparent #36404b transparent;
+	border-color: transparent transparent #3D5793 transparent;
 }
 .detail-in {
 	border: 1px solid #ececec;
@@ -780,7 +780,7 @@ header .quotes a:hover {
 	color: #fff;
 	font-size: 20px;
 	line-height: 40px;
-	background: #36404b;
+	background: #3D5793;
 }
 .go-btn:before {
 	content: "";
@@ -788,7 +788,7 @@ header .quotes a:hover {
 	right: 100%;
 	border-style: solid;
 	border-width: 0 0 40px 20px;
-	border-color: transparent transparent #36404b transparent;
+	border-color: transparent transparent #3D5793 transparent;
 	position: absolute;
 	-webkit-transition: 0.4s ease-in-out;
 	-moz-transition: 0.4s ease-in-out;
@@ -797,7 +797,7 @@ header .quotes a:hover {
 	transition: 0.4s ease-in-out;
 }
 .go-btn:hover:before {
-	border-color: transparent transparent #36404b transparent;
+	border-color: transparent transparent #3D5793 transparent;
 }
 /*=======================================================
       WORK
@@ -938,7 +938,7 @@ header .quotes a:hover {
 	text-transform: none;
 	font-weight: normal;
 	font-size: 15px;
-	color: #36404b;
+	color: #3D5793;
 	letter-spacing: 0px;
 	line-height: 24px;
 }
@@ -1026,7 +1026,7 @@ header .quotes a:hover {
 	border-left: 1px solid rgba(255,255,255,0.2);
 }
 .team .social li a:hover {
-	color: #36404b;
+	color: #3D5793;
 }
 .team .team-name {
 	position: absolute;
@@ -1092,7 +1092,7 @@ header .quotes a:hover {
 	font-size: 22px;
 	font-weight: 300;
 	line-height: 42px;
-	color: #36404b;
+	color: #3D5793;
 }
 .offers-tabs .tab-pane ul li {
 	padding-top: 5px;
@@ -1313,7 +1313,7 @@ header .quotes a:hover {
 }
 .testi h5 {
 	font-size: 18px;
-	color: #36404b;
+	color: #3D5793;
 	margin-bottom: 7px;
 	margin-top: 20px;
 	font-weight: 800;
@@ -1521,7 +1521,7 @@ header .quotes a:hover {
 	text-transform: uppercase;
 }
 .blog .tittle-post a {
-	color: #36404b;
+	color: #3D5793;
 }
 .blog .tittle-post a:hover {
 	color: #00b1f1;
@@ -1721,7 +1721,7 @@ footer h6 {
 }
 footer {
 	padding: 0;
-	background: #36404b url(../images/footer-bg.png) center center no-repeat;
+	background: #3D5793 url(../images/footer-bg.png) center center no-repeat;
 	padding-bottom: 60px;
 	margin-top: 60px;
 }
@@ -2239,7 +2239,7 @@ footer .social_icons a {
 	font-weight: 500;
 	font-size: 18px;
 	text-align: center;
-	color: #36404b;
+	color: #3D5793;
 	margin: 30px 0;
 	margin-top: 60px;
 	padding: 30px 0;
@@ -2760,7 +2760,7 @@ footer .social_icons a {
 	line-height: 40px;
 }
 .pricing .price {
-	background-color: #36404B;
+	background-color: #3D5793;
 	padding: 0px 0;
 	position: relative;
 	z-index: 8;
@@ -2799,7 +2799,7 @@ footer .social_icons a {
 	border-radius: 50%;
 	text-align: center;
 	font-size: 24px;
-	color: #36404b;
+	color: #3D5793;
 	background: #fff;
 	line-height: 86px;
 	position: absolute;
@@ -2813,7 +2813,7 @@ footer .social_icons a {
 	width: 76px;
 	background: #fff;
 	content: "";
-	border: 4px solid #36404b;
+	border: 4px solid #3D5793;
 	border-radius: 50%;
 	position: absolute;
 	left: 5px;
