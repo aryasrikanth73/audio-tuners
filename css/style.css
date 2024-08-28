@@ -1827,7 +1827,8 @@ footer .recent-come li span {
 footer .subcribe {
 	display: inline-block;
 	width: 100%;
-	background: url(../images/subcribe-bg.jpg) no-repeat;
+	/* background: url(../images/subcribe-bg.jpg) no-repeat; */
+	background-color: #A443D8;
 	background-size: cover;
 	padding: 30px 30px;
 	margin-bottom: 60px;
