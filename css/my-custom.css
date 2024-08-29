@@ -66,7 +66,9 @@
 }
 
 .whatsapp-icon:hover {
-    background-color: #128C7E;
+    background-color: none;
+    color: #fff;
+    text-decoration: none;
 }
 
 /* Social Media Widget */
