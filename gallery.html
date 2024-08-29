@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Gallery with Sticky Filters</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+       /* Custom Styles */
+
+       body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay .text {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .filter-btn {
+            margin: 0 5px;
+            transition: background-color 0.3s, color 0.3s;
+            border-color: #A443D8;
+            color: #A443D8;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: #A443D8;
+            color: #fff;
+            border: #A443D8;
+        }
+
+        /* Sticky Filter Bar */
+        .sticky-filter {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #fff;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 576px) {
+            .overlay .text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Advanced Gallery</h1>
+        
+        <!-- Sticky Category Filters -->
+        <div class="sticky-filter text-center mb-4">
+            <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="nature">Nature</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="architecture">Architecture</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="people">People</button>
+        </div>
+    
+        <div class="row g-4 gallery-grid">
+            <!-- Gallery Items -->
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 2</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 2</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 2</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 2</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 2</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 2</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 2</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 2</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 2</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 2</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 2</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 2</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 1</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Nature 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">Architecture 2</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
+                <div class="overlay">
+                    <div class="text">People 2</div>
+                </div>
+            </div>
+
+            
+            <!-- Add more gallery items as needed -->
+        </div>
+    </div>
+    
+    <!-- Modal for Image -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Image Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" alt="Gallery Image" class="img-fluid" id="modalImage">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-zgTPAh0HbVCFLI4qzXqGkm1kaUgnOfDJAvEhxAN8E3BBQGfn/wvwhtP3vYrjHfsF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-ujSHVpi7Z7XgP2siXbrwE7uXf23YJPh+qrhCxj+3ckRFVtk6sR+fG1SVmXhChFtb" crossorigin="anonymous"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize AOS
+        AOS.init({
+            duration: 800, // Animation duration
+            easing: 'ease-in-out', // Animation easing
+            once: true, // Whether animation should happen only once
+        });
+
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to the clicked button
+                button.classList.add('active');
+
+                // Show/Hide gallery items based on filter
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.classList.remove('d-none');
+                    } else {
+                        item.classList.add('d-none');
+                    }
+                });
+
+                // Refresh AOS to recognize the newly visible elements
+                AOS.refresh();
+            });
+        });
+
+        // Modal functionality
+        const gallery = document.querySelector('.gallery-grid');
+        const modal = new bootstrap.Modal(document.getElementById('galleryModal'));
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.querySelector('#galleryModalLabel');
+
+        gallery.addEventListener('click', function (e) {
+            if (e.target.closest('.gallery-item')) {
+                const imgSrc = e.target.closest('.gallery-item').querySelector('img').src;
+                const imgTitle = e.target.closest('.gallery-item').querySelector('.text').innerText;
+                modalImage.src = imgSrc;
+                modalTitle.textContent = imgTitle;
+                modal.show();
+            }
+        });
+    });
+</script>
+</body>
+</html>
