@@ -69,3 +69,6 @@ $(document).ready(function() {
 
     displayReviews();
 });
+
+
+// Social media icon

@@ -37,17 +37,46 @@
 </head>
 <body>
 <!-- Social Media Widget -->
+<!-- WhatsApp Icon -->
+<div id="whatsapp-widget">
+  <a href="#" class="whatsapp-icon">
+      <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('social-toggle').addEventListener('click', function() {
+        const socialIcons = document.querySelectorAll('#social-media-widget .social-icon:not(#social-toggle)');
+        socialIcons.forEach(icon => {
+            if (icon.style.display === 'none' || icon.style.display === '') {
+                icon.style.display = 'flex';
+            } else {
+                icon.style.display = 'none';
+            }
+        });
+    });
+});
+
+</script>
+<!-- Social Media Widget -->
 <div id="social-media-widget">
-  <!-- <a href="https://www.twitter.com" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a> -->
-  <a href="https://www.instagram.com/audiotunerz.in/" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-  <a href="https://m.youtube.com/@audiotunerzimthiyaz" target="_blank" class="social-icon linkedin"><i class="fab fa-youtube"></i></a>
-  <a href="https://m.facebook.com/audiotunerz.in/" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+  <div id="social-toggle" class="social-icon">
+      <i class="fas fa-share-alt"></i>
+  </div>
+  <a href="https://m.facebook.com/audiotunerz.in/" target="_blank" class="social-icon facebook" style="display:none;">
+      <i class="fab fa-facebook-f"></i>
+  </a>
+  <!-- <a href="#" class="social-icon twitter" style="display:none;">
+      <i class="fab fa-twitter"></i>
+  </a> -->
+  <a href="https://www.instagram.com/audiotunerz.in/" target="_blank" class="social-icon instagram" style="display:none;">
+      <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://m.youtube.com/@audiotunerzimthiyaz" target="_blank" class="social-icon linkedin" style="display:none;">
+      <i class="fab fa-youtube"></i>
+  </a>
 </div>
 
-<!-- WhatsApp Widget -->
-<div id="whatsapp-widget">
-  <a href="https://wa.me/919908805551" target="_blank" class="whatsapp-icon"><i class="fab fa-whatsapp"></i></a>
-</div>
 <!-- Wrap -->
 <div id="wrap"> 
   
@@ -59,10 +88,10 @@
       <div class="logo"> <a href="#."><img  class="img-responsive" src="images/logo/audio-tunerz-logo.png" alt="Audio Tunzer" ></a> </div>
       
       <!-- INFO -->
-      <div class="top-info-con">
+      <!-- <div class="top-info-con">
         <ul>
           
-          <!-- Call Us Now -->
+          
           <li>
             <div class="media-left">
               <div class="icon"> <i class="icon-call-in"></i></div>
@@ -73,7 +102,7 @@
             </div>
           </li>
           
-          <!-- Email us -->
+          
           <li>
             <div class="media-left">
               <div class="icon"> <i class="icon-envelope-open"></i></div>
@@ -84,7 +113,7 @@
             </div>
           </li>
           
-          <!-- Opening Time -->
+          
           <li>
             <div class="media-left">
               <div class="icon"> <i class="icon-clock"></i></div>
@@ -95,7 +124,7 @@
             </div>
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
     
     <!-- Navigation -->
