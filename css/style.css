@@ -587,7 +587,7 @@ header .quotes a:hover {
       SUB BANNER
 ========================================================*/
 .sub-bnr {
-	background: url(../images/sub-bnr-bg.jpg) no-repeat;
+	background: url(../images/about/about.jpg) no-repeat;
 	background-size: cover;
 	min-height: 350px;
 	text-align: center;
@@ -1926,16 +1926,16 @@ footer .social_icons a {
 	position: absolute;
 	left: 0px;
 	top: 10px;
-	color: #969ea7;
+	color: #ffff;
 	font-family: 'FontAwesome';
 }
 .footer-info .links li a {
-	color: #969ea7;
+	color: #ffff;
 	line-height: 40px;
 	font-size: 13px;
 }
 .footer-info .links li a:hover {
-	color: #e4454b;
+	color: #A443D8;
 }
 .footer-info .quote .form-control {
 	background: none;

@@ -4,6 +4,7 @@ $(document).ready(function() {
             name: "John Doe",
             rating: 5,
             review: "Excellent service! Highly recommended. The team was very professional and attentive to all our needs.",
+                
             image: "https://lh3.googleusercontent.com/a-/ALV-UjV3ABrIbaT-Mf2-YtN1e0lbIreUhVtqWUyS9fssRGOjPYslZOg=w60-h60-p-rp-mo-br100"
         },
         {
@@ -69,6 +70,3 @@ $(document).ready(function() {
 
     displayReviews();
 });
-
-
-// Social media icon

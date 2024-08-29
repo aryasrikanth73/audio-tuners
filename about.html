@@ -36,17 +36,46 @@
 <![endif]-->
 </head>
 <body>
-  <!-- Social Media Widget -->
-  <div id="social-media-widget">
-    <a href="https://m.facebook.com/audiotunerz.in/" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
-    <!-- <a href="https://www.twitter.com" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a> -->
-    <a href="https://www.instagram.com/audiotunerz.in/" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://m.youtube.com/@audiotunerzimthiyaz" target="_blank" class="social-icon linkedin"><i class="fab fa-youtube"></i></a>
+  <!-- WhatsApp Icon -->
+  <div id="whatsapp-widget">
+    <a href="https://wa.me/919908805551" target="_blank" class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </a>
   </div>
   
-  <!-- WhatsApp Widget -->
-  <div id="whatsapp-widget">
-    <a href="https://wa.me/+919908805551" target="_blank" class="whatsapp-icon"><i class="fab fa-whatsapp"></i></a>
+  <!-- Social Media Widget -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('social-toggle').addEventListener('click', function() {
+          const socialIcons = document.querySelectorAll('#social-media-widget .social-icon:not(#social-toggle)');
+          socialIcons.forEach(icon => {
+              if (icon.style.display === 'none' || icon.style.display === '') {
+                  icon.style.display = 'flex';
+              } else {
+                  icon.style.display = 'none';
+              }
+          });
+      });
+  });
+  
+  </script>
+  <!-- Social Media Widget -->
+  <div id="social-media-widget">
+    <div id="social-toggle" class="social-icon">
+        <i class="fas fa-share-alt"></i>
+    </div>
+    <a href="https://m.facebook.com/audiotunerz.in/" target="_blank" class="social-icon facebook" style="display:none;">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <!-- <a href="#" class="social-icon twitter" style="display:none;">
+        <i class="fab fa-twitter"></i>
+    </a> -->
+    <a href="https://www.instagram.com/audiotunerz.in/" target="_blank" class="social-icon instagram" style="display:none;">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://m.youtube.com/@audiotunerzimthiyaz" target="_blank" class="social-icon linkedin" style="display:none;">
+        <i class="fab fa-youtube"></i>
+    </a>
   </div>
 
 
@@ -60,7 +89,7 @@
       <div class="logo"> <a href="#."><img  class="img-responsive" src="images/logo/audio-tunerz-logo.png" alt="" ></a> </div>
       
       
-      <div class="top-info-con">
+      <!-- <div class="top-info-con">
         <ul>
           
           
@@ -96,35 +125,46 @@
             </div>
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
     
-    
+    <!-- Navigation -->
+    <style>
+      /* Default state: Down arrow for "Car Audio" */
+.nav.ownmenu > li > a[href="#"]:after {
+  content: '\25BC'; /* Down arrow */
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+/* On hover: Up arrow for "Car Audio" */
+.nav.ownmenu > li:hover > a[href="#"]:after {
+  content: '\25B2'; /* Up arrow */
+}
+
+     </style>
     <nav class="navbar">
       <div class="container">
         <ul class="nav ownmenu">
           <li> <a href="index.html">Home</a> </li>
           <li class="active"> <a href="about.html">About</a> </li>
-          <li> <a href="services.html">Services</a> </li>
-          <li> <a href="work.html">Portfolio</a> </li>
-          <li> <a href="index.html">Pages</a>
+          <!-- <li> <a href="services.html">Services</a> </li> -->
+          <li> <a href="#">Car Audio </a>
             <ul class="dropdown animated-3s fadeInRight">
-              <li> <a href="index.html">Home</a> </li>
-              <li> <a href="about.html">About</a> </li>
-              <li> <a href="services.html">Services</a> </li>
-              <li> <a href="work.html">Portfolio</a> </li>
-              <li> <a href="blog.html">Blog</a> </li>
-              <li> <a href="blog-detail.html">Blog Detail</a> </li>
-              <li> <a href="contact.html">Contact</a> </li>
-              <li> <a href="404-page.html">404</a> </li>
+              <li> <a href=".html">Audio Installation</a> </li>
+              <li> <a href=".html">DSP Tuning</a> </li>
+              <li> <a href=".html">Custom Fabrication</a> </li>
+              <li> <a href=".html">Sound Proofing Solutions</a> </li>
             </ul>
           </li>
-          <li> <a href="blog.html">Blog</a> </li>
+          <li> <a href="work.html">Photo Gallery</a> </li>
+          <!-- <li> <a href="blog.html">Blog</a> </li> -->
           <li> <a href="contact.html">Contact us</a> </li>
+          <li> <a href="reviews.html">Reviews</a></li>
         </ul>
         
-        
-        <div class="quotes"> <a href="#"> Add to Cart <i class="icon-basket margin-left-10"></i></a> </div>
+        <!-- GET A QUOTES -->
+        <!-- <div class="quotes"> <a href="#"> Add to Cart <i class="icon-basket margin-left-10"></i></a> </div> -->
       </div>
     </nav>
   </header>
@@ -151,7 +191,7 @@
         
         
         <div class="heading text-center">
-          <h5>Why Choose Us</h5>
+          <h5>About We</h5>
           <hr>
           <div class="text-left">
           <p>With over 18 years of experience in the 12v audio industry, Mr. Imthiyaz is the driving force behind AudioTunerz. As the owner and chief tuner, he combines technical expertise with a deep passion for car audio, ensuring that every project meets the highest standards of quality and performance. His advanced training at Indonesia's Audioworkshop "Top Gun Tuning Camp" and his role as an EMMA-trained judge are testaments to his exceptional skills and dedication to the craft. </p> <br>
@@ -438,13 +478,14 @@
       
       <!--======= NEWSLETTER =========-->
       <div class="subcribe">
-        <div class="col-md-4 no-padding">
-          <h5>Subscribe to our newsletter</h5>
+        <div class="col-md-12 no-padding text-center">
+          <h5>Turn up the volume and let your ride become a symphony of sound.</h5>
+          <!-- <h5>Transform your drive with sound that moves you—unleash the power of pure audio perfection</h5> -->
         </div>
         <div class="col-md-8 no-padding">
           <form>
-            <input class="form-control" type="email" placeholder="E-mail Address" value="" required>
-            <button type="submit" class="btn">Subscribe <span><i class="ion-ios-arrow-thin-right"></i></span></button>
+            <!-- <input class="form-control" type="email" placeholder="E-mail Address" value="" required> -->
+            <!-- <button type="submit" class="btn">Subscribe <span><i class="ion-ios-arrow-thin-right"></i></span></button> -->
           </form>
         </div>
       </div>
@@ -452,32 +493,30 @@
         <div class="container">
           <div class="row"> 
             
-            
-            <div class="col-md-4 col-sm-12 col-xs-12"> <img class="margin-bottom-30" src="images/logo/audio-tunerz-white-logo.png" alt="" >
-              <p>Aoluptas sit aspernatur aut odit aut fugit, sed elits quias consequuntur magni dolores eos qui ratione volust  luptatem sequi nesciunt.. <br>
-              
-              <p>Aoluptas sit aspernatur aut odit aut fugit, sed elits quias consequuntur magni dolores </p>
+            <!-- About -->
+            <div class="col-md-6 col-sm-12 col-xs-12"> <img class="margin-bottom-30" src="images/logo/audio-tunerz-white-logo.png" alt="" >
+              <p>At Audio Tunerz Car Audio, we specialize in delivering high-performance sound systems that transform your driving experience. With top-tier products and expert installation, we bring clarity, power, and precision to your vehicle’s audio. Trust us to elevate your in-car entertainment with innovative solutions tailored to your needs.</p>
             </div>
             
-            
-            <div class="col-md-4 col-sm-12 col-xs-12">
-              <h6>Service provided</h6>
+            <!-- Service provided -->
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <h6>Useful Links</h6>
               <ul class="links">
-                <li><a href="#.">Wheel Alignment</a></li>
-                <li><a href="#.">Brake Repair Specialists</a></li>
-                <li><a href="#.">Engine Overhaul</a></li>
-                <li><a href="#.">Complete Safety Analysis</a></li>
-                <li><a href="#.">Suspension Repair</a></li>
-                <li><a href="#.">Car Cleaning And Washing</a></li>
-                <li><a href="#.">Fuel System Service</a></li>
-                <li><a href="#.">Engine Installation</a></li>
-                <li><a href="#.">Car Sell And Buying </a></li>
-                <li><a href="#.">Suspension Repair</a></li>
+                <li><a href="#.">Home</a></li>
+                <li><a href="#.">About</a></li>
+                <li><a href="#.">Audio Installation</a></li>
+                <li><a href="#.">Advanced Sound Quality Analysis</a></li>
+                <li><a href="#.">DSP Tuning</a></li>
+                <li><a href="#.">Custom Fabrication</a></li>
+                <li><a href="#.">Sound Proofing Solutions</a></li>
+                <li><a href="#.">Photo Gallery</a></li>
+                <li><a href="#.">Reviews </a></li>
+                <li><a href="#.">Contact Us</a></li>
               </ul>
             </div>
             
-            
-            <div class="col-md-4 col-sm-12 col-xs-12">
+            <!-- Quote -->
+            <!-- <div class="col-md-4 col-sm-12 col-xs-12">
               <h6>Get Free Quote</h6>
               <div class="quote">
                 <form>
@@ -488,25 +527,25 @@
                 </form>
               </div>
             </div>
-          </div>
+          </div> -->
           
           <!--======= Footer Info =========-->
           <div class="foot-info-con">
             <ul class="row">
               
-              
-              <li class="col-md-3 col-sm-6 col-xs-6">
+              <!-- Call Us Now -->
+              <li class="col-md-4 col-sm-4 col-xs-4">
                 <div class="media-left">
                   <div class="icon"> <i class="icon-call-in"></i></div>
                 </div>
                 <div class="media-body">
                   <h6>Call Us Now </h6>
-                  <p>+ ( 124 ) 45 78 678 </p>
+                  <p>+91 99088 05551 </p>
                 </div>
               </li>
               
-              
-              <li class="col-md-3 col-sm-6 col-xs-6">
+              <!-- Email us -->
+              <li class="col-md-4 col-sm-4 col-xs-4">
                 <div class="media-left">
                   <div class="icon"> <i class="icon-envelope-open"></i></div>
                 </div>
@@ -516,8 +555,8 @@
                 </div>
               </li>
               
-              
-              <li class="col-md-3 col-sm-6 col-xs-6">
+              <!-- Fax to us -->
+              <!-- <li class="col-md-4 col-sm-4 col-xs-4">
                 <div class="media-left">
                   <div class="icon"> <i class="icon-clock"></i></div>
                 </div>
@@ -525,11 +564,11 @@
                   <h6>Fax to us </h6>
                   <p>+(01) 848-658-789</p>
                 </div>
-              </li>
-              
-              <li class="col-md-3 col-sm-6 col-xs-6">
+              </li> -->
+              <!-- Opening Time -->
+              <li class="col-md-4 col-sm-4 col-xs-4">
                 <div class="media-left">
-                  <div class="icon"> <i class="icon-printer"></i></div>
+                  <div class="icon"> <i class="icon-clock"></i></div>
                 </div>
                 <div class="media-body">
                   <h6>Opening Hours </h6>
