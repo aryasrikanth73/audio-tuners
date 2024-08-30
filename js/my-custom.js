@@ -3,7 +3,11 @@ $(document).ready(function() {
         {
             name: "John Doe",
             rating: 5,
-            review: "Excellent service! Highly recommended. The team was very professional and attentive to all our needs.",
+            review: [
+                "It is with great satisfaction that I declare, 'My vehicle!!!' This fills me with pride.",
+                "The acknowledgment must be given to Mr. Imtiaz— Audiotunerz. The exceptional quality of the audio exceeded my expectations. Furthermore, his professional handling of the vehicle",
+                "during the installation was truly commendable. The photos speak for themselves, no further explanation needed... The music playing in my Crysta left me speechless!!! In short, it is excellent!!"
+            ],
                 
             image: "https://lh3.googleusercontent.com/a-/ALV-UjV3ABrIbaT-Mf2-YtN1e0lbIreUhVtqWUyS9fssRGOjPYslZOg=w60-h60-p-rp-mo-br100"
         },
