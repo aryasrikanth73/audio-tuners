@@ -3,672 +3,640 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Gallery with Sticky Filters</title>
-    <!-- Bootstrap CSS -->
+    <title>Audio Tunerz - Home</title>
+    <link rel="stylesheet" type="text/css" href="revolution/css/settings.css">	
+    <link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">    
+    <link href="css/bootstrap.min.css" rel="stylesheet">    
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/ionicons.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/my-custom.css">
+    <link href="css/responsive.css" rel="stylesheet">   
+    <link href='https://fonts.googleapis.com/css?family=Martel+Sans:400,200,300,600,700,800,900|Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-       /* Custom Styles */
-
-       body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
-        }
-
-        h1 {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            opacity: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover .overlay {
-            opacity: 1;
-        }
-
-        .overlay .text {
-            color: #fff;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .filter-btn {
-            margin: 0 5px;
-            transition: background-color 0.3s, color 0.3s;
-            border-color: #A443D8;
-            color: #A443D8;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background-color: #A443D8;
-            color: #fff;
-            border: #A443D8;
-        }
-
-        /* Sticky Filter Bar */
-        .sticky-filter {
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: #fff;
-            padding: 10px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 576px) {
-            .overlay .text {
-                font-size: 1.2rem;
-            }
+        ul li a{
+            text-decoration: none;
         }
     </style>
 </head>
+<title>nav-foot</title>
+</head>
 <body>
-
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Advanced Gallery</h1>
+    <div id="wrap"> 
         
-        <!-- Sticky Category Filters -->
-        <div class="sticky-filter text-center mb-4">
-            <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
-            <button class="btn btn-outline-primary filter-btn" data-filter="nature">Nature</button>
-            <button class="btn btn-outline-primary filter-btn" data-filter="architecture">Architecture</button>
-            <button class="btn btn-outline-primary filter-btn" data-filter="people">People</button>
+        <div id="whatsapp-widget">
+    <a href="https://wa.me/919908805551" target="_blank" class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </a>
         </div>
-    
-        <div class="row g-4 gallery-grid">
-            <!-- Gallery Items -->
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 2</div>
-                </div>
-            </div>
+        
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('social-toggle').addEventListener('click', function() {
+          const socialIcons = document.querySelectorAll('#social-media-widget .social-icon:not(#social-toggle)');
+          socialIcons.forEach(icon => {
+              if (icon.style.display === 'none' || icon.style.display === '') {
+                  icon.style.display = 'flex';
+              } else {
+                  icon.style.display = 'none';
+              }
+          });
+      });
+  });
+  
+        </script>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 2</div>
-                </div>
-            </div>
+        <div id="social-media-widget">
+    <div id="social-toggle" class="social-icon">
+        <i class="fas fa-share-alt"></i>
+    </div>
+    <a href="https://m.facebook.com/audiotunerz.in/" target="_blank" class="social-icon facebook" style="display:none;">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <!-- <a href="#" class="social-icon twitter" style="display:none;">
+        <i class="fab fa-twitter"></i>
+    </a> -->
+    <a href="https://www.instagram.com/audiotunerz.in/" target="_blank" class="social-icon instagram" style="display:none;">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://m.youtube.com/@audiotunerzimthiyaz" target="_blank" class="social-icon linkedin" style="display:none;">
+        <i class="fab fa-youtube"></i>
+    </a>
+        </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 2</div>
-                </div>
-            </div>
+        <header> 
+          
+          <div class="container">
+            <div class="logo"> <a href="#."><img  class="img-responsive" src="images/logo/audio-tunerz-logo.png" alt="Audio Tunzer" ></a> </div>
+          </div>
+          
+           <style>
+                .nav.ownmenu > li > a[href="#"]:after {
+                  content: '\25BC'; 
+                  margin-left: 5px;
+                  font-size: 12px;
+                }
 
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 1</div>
-                </div>
+                .nav.ownmenu > li:hover > a[href="#"]:after {
+                  content: '\25B2';
+                }
+           </style>
+          <nav class="navbar">
+            <div class="container">
+              <ul class="nav ownmenu">
+                <li class="active"> <a href="index.html">Home</a> </li>
+                <li> <a href="about.html">About</a> </li>
+                <li> <a href="#">Car Audio </a>
+                  <ul class="dropdown animated-3s fadeInRight">
+                    <li> <a href="audio-installation.html">Audio Installation</a> </li>
+                    <li> <a href="dsp-tuning.html">DSP Tuning</a> </li>
+                    <li> <a href="custom-fabrication.html">Custom Fabrication</a> </li>
+                    <li> <a href="sound-proofing-solutions.html">Sound Proofing Solutions</a> </li>
+                  </ul>
+                </li>
+                <li> <a href="#">Photo Gallery</a> </li>
+                <li> <a href="contact.html">Contact us</a> </li>
+                <li> <a href="reviews.html">Reviews</a></li>
+              </ul>
+              
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 1</div>
-                </div>
+          </nav>
+        </header>
+        <section class="sub-bnr">
+            <div class="position-center-center">
+              <div class="container"> <img src="images/sub-bnr-hr-up-work.png" alt="" >
+                <h4>Latest Gallery</h4>
+                <ol class="breadcrumb">
+                  <li><a href="#">Home</a></li>
+                  <li class="active">Gallery</li>
+                </ol>
+                <img src="images/sub-bnr-hr.png" alt="" > </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 2</div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 2</div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 2</div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 2</div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 2</div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 2</div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 2</div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 2</div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 2</div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+1" alt="Architecture Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+1" alt="People Image 1" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 1</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Nature 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=Architecture+2" alt="Architecture Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">Architecture 2</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up">
-                <img src="https://via.placeholder.com/400x300?text=People+2" alt="People Image 2" class="img-fluid">
-                <div class="overlay">
-                    <div class="text">People 2</div>
-                </div>
-            </div>
-
+          </section>
+        <div class="container mt-5">
+        <!-- <div class="heading text-center padding-top-100">
+                <h5>Gallery</h5>
+        </div> -->
             
-            <!-- Add more gallery items as needed -->
-        </div>
-    </div>
-    
-    <!-- Modal for Image -->
-    <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Image Title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- Sticky Category Filters -->
+            <div class="sticky-filter text-center mb-4" style="position: -webkit-sticky; position: sticky; top: 0; z-index: 1000; background-color: #fff; padding: 10px 0; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                <button class="btn btn-outline-primary filter-btn active" data-filter="all" style="margin: 0 5px; transition: background-color 0.3s, color 0.3s; border-color: #A443D8; color: #A443D8; font-weight: 700; background-color: #fff;">All</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="nature" style="margin: 0 5px; transition: background-color 0.3s, color 0.3s; border-color: #A443D8; color: #A443D8; font-weight: 700; background-color: #fff;">DSP Tuning</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="nature" style="margin: 0 5px; transition: background-color 0.3s, color 0.3s; border-color: #A443D8; color: #A443D8; font-weight: 700; background-color: #fff;">DSP Tuning</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="architecture" style="margin: 0 5px; transition: background-color 0.3s, color 0.3s; border-color: #A443D8; color: #A443D8; font-weight: 700; background-color: #fff;">Fabication</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="people" style="margin: 0 5px; transition: background-color 0.3s, color 0.3s; border-color: #A443D8; color: #A443D8; font-weight: 700; background-color: #fff;">Installation</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="Sound Damping" style="margin: 0 5px; transition: background-color 0.3s, color 0.3s; border-color: #A443D8; color: #A443D8; font-weight: 700; background-color: #fff;">Sound Damping</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="Taining" style="margin: 0 5px; transition: background-color 0.3s, color 0.3s; border-color: #A443D8; color: #A443D8; font-weight: 700; background-color: #fff;">Taining & Events</button>
+            </div>
+        
+            <div class="row g-4 gallery-grid">
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-1.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 1</div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <img src="" alt="Gallery Image" class="img-fluid" id="modalImage">
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-2.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 2</div>
+                    </div>
                 </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-3.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 3</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-4.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 4</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-5.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 5</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-6.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 6</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-7.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 7</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-8.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 8</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-9.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 9</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-10.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 10</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-11.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 11</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-12.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 12</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-13.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 13</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-14.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 14</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-15.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 15</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-16.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 16</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-17.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 17</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-18.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 18</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-19.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 19</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-20.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 20</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-21.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 21</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Taining" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/trainings-events/trainings-events-22.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Taining & Events 22</div>
+                    </div>
+                </div>
+                
+
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/dsp-tuning/dsp-tuning-2.png" alt="DSP Tuning 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">DSP Tuning 1</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/fabrication/fabication-1.png" alt="Fabication Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Fabication 1</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/installation/installation-1.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Installation 1</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/dsp-tuning/dsp-tuning-1.png" alt="DSP Tuning 2" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">DSP Tuning 2</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/fabrication/fabication-2.png" alt="Fabication Image 2" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Fabication 2</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/installation/installation-2.png" alt="Installation Image 2" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Installation 2</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="nature" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/dsp-tuning/dsp-tuning-3.png" alt="DSP Tuning 3" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">DSP Tuning 3</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/fabrication/fabication-3.png" alt="Fabication Image 2" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Fabication 3</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/fabrication/fabication-4.png" alt="Fabication Image 2" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Fabication 4</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/fabrication/fabication-5.png" alt="Fabication Image 2" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Fabication 5</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/fabrication/fabication-6.png" alt="Fabication Image 2" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Fabication 6</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/fabrication/fabication-7.png" alt="Fabication Image 2" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Fabication 7</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/fabrication/fabication-8.png" alt="Fabication Image 2" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Fabication 8</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/fabrication/fabication-9.png" alt="Fabication Image 2" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Fabication 9</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/fabrication/fabication-10.png" alt="Fabication Image 2" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Fabication 10</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="architecture" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/fabrication/fabication-11.png" alt="Fabication Image 2" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Fabication 11</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/installation/installation-3.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Installation 3</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/installation/installation-4.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Installation 4</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/installation/installation-5.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Installation 5</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/installation/installation-6.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Installation 6</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/installation/installation-7.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Installation 7</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/installation/installation-8.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Installation 8</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/installation/installation-9.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Installation 9</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="people" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/installation/installation-10.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Installation 10</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Sound Damping" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/sound-damping/sound-damping-1.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Sound Damping 1</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Sound Damping" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/sound-damping/sound-damping-2.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Sound Damping 2</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Sound Damping" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/sound-damping/sound-damping-3.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Sound Damping 3</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Sound Damping" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/sound-damping/sound-damping-4.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Sound Damping 4</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Sound Damping" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/sound-damping/sound-damping-5.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Sound Damping 5</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Sound Damping" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/sound-damping/sound-damping-6.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Sound Damping 6</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Sound Damping" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/sound-damping/sound-damping-7.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Sound Damping 7</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Sound Damping" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/sound-damping/sound-damping-8.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Sound Damping 8</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Sound Damping" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/sound-damping/sound-damping-9.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Sound Damping 9</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-item" data-category="Sound Damping" data-aos="fade-up" style="position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease;">
+                    <img src="images/sound-damping/sound-damping-10.png" alt="Installation Image 1" class="img-fluid" style="width: 100%; height: auto; transition: transform 0.3s ease;">
+                    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease;">
+                        <div class="text" style="color: #fff; font-size: 1.5rem; font-weight: bold; text-align: center;">Sound Damping 10</div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
-    </div>
     
-    <!-- Bootstrap JS and Dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-zgTPAh0HbVCFLI4qzXqGkm1kaUgnOfDJAvEhxAN8E3BBQGfn/wvwhtP3vYrjHfsF" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-ujSHVpi7Z7XgP2siXbrwE7uXf23YJPh+qrhCxj+3ckRFVtk6sR+fG1SVmXhChFtb" crossorigin="anonymous"></script>
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Initialize AOS
-        AOS.init({
-            duration: 800, // Animation duration
-            easing: 'ease-in-out', // Animation easing
-            once: true, // Whether animation should happen only once
-        });
-
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const filter = button.getAttribute('data-filter');
-
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to the clicked button
-                button.classList.add('active');
-
-                // Show/Hide gallery items based on filter
-                galleryItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.classList.remove('d-none');
-                    } else {
-                        item.classList.add('d-none');
-                    }
+        <!-- Bootstrap and AOS JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+    
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+    
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+    
+                    const filter = button.getAttribute('data-filter');
+    
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            item.style.transform = 'scale(1)';
+                            item.style.opacity = '1';
+                        } else {
+                            item.style.display = 'none';
+                            item.style.transform = 'scale(0.9)';
+                            item.style.opacity = '0.5';
+                        }
+                    });
                 });
-
-                // Refresh AOS to recognize the newly visible elements
-                AOS.refresh();
             });
-        });
+    
+            // Add hover effect to gallery items
+            galleryItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    const overlay = item.querySelector('.overlay');
+                    overlay.style.opacity = '1';
+                });
+    
+                item.addEventListener('mouseleave', () => {
+                    const overlay = item.querySelector('.overlay');
+                    overlay.style.opacity = '0';
+                });
+            });
+        </script>
+        <footer>
+          <div class="container"> 
+            
+            <div class="subcribe">
+              <div class="col-md-12 no-padding text-center">
+                <h5>Turn up the volume and let your ride become a symphony of sound.</h5>
+              </div>
+              <div class="col-md-8 no-padding">
+                <form>
+                </form>
+              </div>
+            </div>
+            <div class="footer-info">
+              <div class="container">
+                <div class="row"> 
+                  
+                  <div class="col-md-6 col-sm-12 col-xs-12"> <img class="margin-bottom-30" src="images/logo/audio-tunerz-white-logo.png" alt="" >
+                    <p>At Audio Tunerz Car Audio, we specialize in delivering high-performance sound systems that transform your driving experience. With top-tier products and expert installation, we bring clarity, power, and precision to your vehicle’s audio. Trust us to elevate your in-car entertainment with innovative solutions tailored to your needs.</p>
+                  </div>
+                  
+                  <!-- Service provided -->
+                  <div class="col-md-6 col-sm-12 col-xs-12">
+                    <h6>Useful Links</h6>
+                    <ul class="links">
+                      <li><a href="#.">Home</a></li>
+                      <li><a href="#.">About</a></li>
+                      <li><a href="#.">Audio Installation</a></li>
+                      <li><a href="#.">Advanced Sound Quality Analysis</a></li>
+                      <li><a href="#.">DSP Tuning</a></li>
+                      <li><a href="#.">Custom Fabrication</a></li>
+                      <li><a href="#.">Sound Proofing Solutions</a></li>
+                      <li><a href="#.">Photo Gallery</a></li>
+                      <li><a href="#.">Reviews </a></li>
+                      <li><a href="#.">Contact Us</a></li>
+                    </ul>
+                  </div>
+                  
+                  <!-- Quote -->
+                  <!-- <div class="col-md-4 col-sm-12 col-xs-12">
+                    <h6>Get Free Quote</h6>
+                    <div class="quote">
+                      <form>
+                        <input class="form-control" type="text" placeholder="Name">
+                        <input class="form-control" type="text" placeholder="Phone No">
+                        <textarea class="form-control" placeholder="Messages"></textarea>
+                        <button type="submit" class="btn">SEND NOW <span><i class="ion-ios-arrow-thin-right"></i></span></button>
+                      </form>
+                    </div>
+                  </div>
+                </div> -->
+                
+                <!--======= Footer Info =========-->
+                <div class="foot-info-con">
+                  <ul class="row">
+                    
+                    <li class="col-md-4 col-sm-4 col-xs-4">
+                      <div class="media-left">
+                        <div class="icon"> <i class="icon-call-in"></i></div>
+                      </div>
+                      <div class="media-body">
+                        <h6>Call Us Now </h6>
+                        <p>+91 99088 05551 </p>
+                      </div>
+                    </li>
+                    <li class="col-md-4 col-sm-4 col-xs-4">
+                      <div class="media-left">
+                        <div class="icon"> <i class="icon-envelope-open"></i></div>
+                      </div>
+                      <div class="media-body">
+                        <h6>Email us</h6>
+                        <p>info@mail.com</p>
+                      </div>
+                    </li>
+                    <li class="col-md-4 col-sm-4 col-xs-4">
+                      <div class="media-left">
+                        <div class="icon"> <i class="icon-clock"></i></div>
+                      </div>
+                      <div class="media-body">
+                        <h6>Opening Hours </h6>
+                        <p>Mon - Sat : 9am to 7pm</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        
+        <div class="rights">
+          <div class="container">
+            <p>Copyrights &copy; Audio Tunerz 2025 All Rights Reserved </p>
+          </div>
+        </div>
+    </div>
 
-        // Modal functionality
-        const gallery = document.querySelector('.gallery-grid');
-        const modal = new bootstrap.Modal(document.getElementById('galleryModal'));
-        const modalImage = document.getElementById('modalImage');
-        const modalTitle = document.querySelector('#galleryModalLabel');
-
-        gallery.addEventListener('click', function (e) {
-            if (e.target.closest('.gallery-item')) {
-                const imgSrc = e.target.closest('.gallery-item').querySelector('img').src;
-                const imgTitle = e.target.closest('.gallery-item').querySelector('.text').innerText;
-                modalImage.src = imgSrc;
-                modalTitle.textContent = imgTitle;
-                modal.show();
-            }
-        });
-    });
-</script>
+    <script src="js/jquery-1.12.4.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/own-menu.js"></script> 
+    <script src="js/jquery.isotope.min.js"></script> 
+    <script src="js/jquery.lighter.js"></script> 
+    <script src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+    <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf0dPCQ0C7oVF0WFKhuyz7v7oWei3vFPI "></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
