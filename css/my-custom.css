@@ -172,3 +172,9 @@
     50% { opacity: 0.5; }
     100% { opacity: 1; }
 }
+
+.social-icon .social-img {
+    width: 38px;  /* Set the desired width */
+    height: 38px; /* Set the desired height */
+    object-fit: contain; /* Ensures the image fits within the specified dimensions */
+}

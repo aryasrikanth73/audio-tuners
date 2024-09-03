@@ -25,7 +25,8 @@
 <link href="css/responsive.css" rel="stylesheet">
 
 <!-- Online Fonts -->
-<link href='https://fonts.googleapis.com/css?family=Martel+Sans:400,200,300,600,700,800,900|Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+<!-- <link href='https://fonts.googleapis.com/css?family=Martel+Sans:400,200,300,600,700,800,900|Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'> -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -34,6 +35,19 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+<style>
+   .outline {
+    font-weight: bold;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; 
+    margin: 20px 0;
+    line-height: 1.2;
+}
+</style>
 </head>
 <body>
 <!-- WhatsApp Icon -->
@@ -63,6 +77,7 @@
 <div id="social-media-widget">
   <div id="social-toggle" class="social-icon">
       <i class="fas fa-link"></i>
+      <!-- <img src="images/logo/social-media-icon.png" alt="Social Icon" class="social-img"> -->
   </div>
   <a href="https://m.facebook.com/audiotunerz.in/" target="_blank" class="social-icon facebook" style="display:none;">
       <i class="fab fa-facebook-f"></i>
@@ -86,7 +101,7 @@
     
     <!-- Logo -->
     <div class="container">
-      <div class="logo"> <a href="#."><img  class="img-responsive" src="images/logo/audio-tunerz-logo.png" alt="Audio Tunzer" ></a> </div>
+      <div class="logo"> <a href="#."><img  class="img-responsive" src="images/logo/audio-tunerz-logo.png" alt="Audio Tunzer" style="width: 252px; height: 67px;"></a> </div>
       
       <!-- INFO -->
       <!-- <div class="top-info-con">
@@ -154,13 +169,13 @@
               <li> <a href="audio-installation.html">Audio Installation</a> </li>
               <li> <a href="dsp-tuning.html">DSP Tuning</a> </li>
               <li> <a href="custom-fabrication.html">Custom Fabrication</a> </li>
-              <li> <a href="sound-proofing-solutions.html">Sound Proofing Solutions</a> </li>
+              <li> <a href="sound-proofing-solutions.html">Acoustic Damping</a> </li>
             </ul>
           </li>
           <li> <a href="gallery.html">Photo Gallery</a> </li>
           <!-- <li> <a href="blog.html">Blog</a> </li> -->
-          <li> <a href="contact.html">Contact us</a> </li>
           <li> <a href="reviews.html">Reviews</a></li>
+          <li> <a href="contact.html">Contact us</a> </li>
         </ul>
         
         <!-- GET A QUOTES -->
@@ -182,18 +197,18 @@
         <ul>
           
 		  <!-- SLIDE  -->
-          <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" data-thumb="images/carousels/carousel-2.png"> 
+          <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" data-thumb="images/carousels/carousel-5.png"> 
             <!-- MAIN IMAGE --> 
             <img src="images/carousels/carousel-5.png"  alt="slider"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
             <!-- LAYERS --> 
             
             <!-- LAYER -->
-            <div class="tp-caption sfb font-martel text-uppercase tp-resizeme" 
-                data-x="['left','left','left','left']" data-hoffset="['375','15','15','15']" 
-				data-y="['middle','middle','middle','top']" data-voffset="['-210','-180','-180','25']" 
-				data-fontsize="['24','24','24','18']"
-				data-fontweight="['800','800','800','800']"
-				data-lineheight="['24','24','24','24']"
+            <div class="tp-caption sfb font-martel text-uppercase tp-resizeme outline" 
+                data-x="['left','left','left','left']" data-hoffset="['25','25','25','15']"  
+                data-y="['top','top','top','top']" data-voffset="['25','25','25','15']"  
+                data-fontsize="['24','24','24','18']"
+                data-fontweight="['800','800','800','800']"
+                data-lineheight="['24','24','24','24']"
                 data-speed="500" 
                 data-start="500"
                 data-easing="Power3.easeInOut" 
@@ -202,19 +217,19 @@
                 data-elementdelay="0.0" 
                 data-endelementdelay="0" 
                 data-endspeed="300"
-				data-width="none"
-				data-height="none"
-				data-responsive_offset="on" 
-				data-whitespace="nowrap" 
+                data-width="none"
+                data-height="none"
+                data-responsive_offset="on" 
+                data-whitespace="nowrap" 
                 style="z-index: 5; color:#fff;">18 years of experience in car audio industry</div>
-            
+
             <!-- LAYER -->
-            <div class="tp-caption sfb font-martel text-white text-uppercase tp-resizeme" 
-				data-x="['left','left','left','left']" data-hoffset="['375','15','15','15']" 
-				data-y="['middle','middle','middle','top']" data-voffset="['-150','-130','-130','60']" 
-				data-fontsize="['50','50','40','30']"
-				data-fontweight="['800','800','800','800']"
-				data-lineheight="['24','24','24','24']"
+            <div class="tp-caption sfb font-martel text-white text-uppercase tp-resizeme outline" 
+                data-x="['left','left','left','left']" data-hoffset="['25','25','25','15']"  
+                data-y="['top','top','top','top']" data-voffset="['75','75','75','60']"  
+                data-fontsize="['50','50','40','30']"
+                data-fontweight="['800','800','800','800']"
+                data-lineheight="['24','24','24','24']"
                 data-speed="500" 
                 data-start="750" 
                 data-easing="Power3.easeInOut" 
@@ -223,17 +238,17 @@
                 data-elementdelay="0.0" 
                 data-endelementdelay="0" 
                 data-endspeed="300"
-				data-responsive_offset="on" 
-				data-whitespace="nowrap" 
-                style="z-index: 5; color: #fff;">Automotive Audio Solutions</div>
-            
+                data-responsive_offset="on" 
+                data-whitespace="nowrap" 
+                style="z-index: 5; color: #fff;">Car Audio Solutions</div>
+
             <!-- LAYER -->
             <div class="tp-caption sfb font-martel text-left tp-resizeme" 
-                data-x="['left','left','left','left']" data-hoffset="['375','15','15','15']" 
-				data-y="['middle','middle','middle','top']" data-voffset="['-80','-60','-40','100']" 
-				data-fontsize="['16','16','14','14']"
-				data-fontweight="['400','400','400','400']"
-				data-lineheight="['32','32','32','32']"
+                data-x="['left','left','left','left']" data-hoffset="['25','25','25','15']"  
+                data-y="['top','top','top','top']" data-voffset="['145','145','145','130']"  
+                data-fontsize="['16','16','14','14']"
+                data-fontweight="['400','400','400','400']"
+                data-lineheight="['32','32','32','32']"
                 data-speed="500" 
                 data-start="1000" 
                 data-easing="Power3.easeInOut" 
@@ -242,14 +257,14 @@
                 data-elementdelay="0.0" 
                 data-endelementdelay="0.0" 
                 data-endspeed="300" 
-				data-width="['900','800','600','400']"
-				data-height="none"
-				data-responsive_offset="on" 
-				data-whitespace="normal" 
+                data-width="['900','800','600','400']"
+                data-height="none"
+                data-responsive_offset="on" 
+                data-whitespace="normal" 
                 style="z-index: 6; color:#fff; white-space: normal;">Car Audio Installation, Custom Fabrication, DSP Tuning and Sound Proofing Solutions</div>
+
             
-            <!-- LAYER -->
-            <div class="tp-caption sfb font-martel text-left tp-resizeme" 
+            <!-- <div class="tp-caption sfb font-martel text-left tp-resizeme" 
 				data-x="['left','left','left','left']" data-hoffset="['375','15','15','15']" 
 				data-y="['middle','middle','middle','bottom']" data-voffset="['40','60','90','100']" 
                 data-speed="500"
@@ -265,7 +280,6 @@
 				data-width="['500','500','400','300']"				
                 style="z-index: 3;"><img width="136" height="135" src="images/carousels/carousel-1-1.png" alt=""> <img width="136" height="135" class="margin-left-20" src="images/carousels/carousel-1-3.png" alt=""> <img width="136" height="135" class="margin-left-20" src="images/carousels/carousel-1-2.png" alt=""> </div>
             
-            <!-- LAYER -->
             <div class="tp-caption sfb tp-resizeme" 
 				data-x="['left','left','left','left']" data-hoffset="['375','15','15','15']" 
 				data-y="['middle','middle','middle','bottom']" data-voffset="['170','170','190','25']" 
@@ -282,22 +296,22 @@
                 data-endspeed="300" 
 				data-whitespace="nowrap" 
 				data-responsive_offset="on" 
-                style="z-index: 7;"><a href="#." style="white-space: nowrap; display: inline-flex;" class="btn">Read More <span><i class="ion-ios-arrow-thin-right"></i></span></a> </div>
+                style="z-index: 7;"><a href="#." style="white-space: nowrap; display: inline-flex;" class="btn">Read More <span><i class="ion-ios-arrow-thin-right"></i></span></a> </div> -->
           </li>
 		  
 		  <!-- SLIDE  -->
-          <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" data-thumb="images/carousels/carousel-3.png"> 
+          <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" data-thumb="images/carousels/carousel-6.png"> 
             <!-- MAIN IMAGE --> 
             <img src="images/carousels/carousel-6.png"  alt="slider"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
             <!-- LAYERS --> 
             
             <!-- LAYER -->
-            <div class="tp-caption sfb font-martel text-uppercase tp-resizeme" 
-				data-x="['left','left','left','left']" data-hoffset="['275','15','15','15']" 
-				data-y="['middle','middle','middle','top']" data-voffset="['-150','-100','-100','25']" 
-				data-fontsize="['24','24','24','18']"
-				data-fontweight="['800','800','800','800']"
-				data-lineheight="['24','24','24','24']"
+            <div class="tp-caption sfb font-martel text-uppercase tp-resizeme outline" 
+                data-x="['left','left','left','left']" data-hoffset="['25','25','25','15']"  
+                data-y="['top','top','top','top']" data-voffset="['25','25','25','15']"  
+                data-fontsize="['24','24','24','18']"
+                data-fontweight="['800','800','800','800']"
+                data-lineheight="['24','24','24','24']"
                 data-speed="500" 
                 data-start="500"
                 data-easing="Power3.easeInOut" 
@@ -306,19 +320,19 @@
                 data-elementdelay="0.0" 
                 data-endelementdelay="0" 
                 data-endspeed="300"
-				data-width="none"
-				data-height="none"
-				data-responsive_offset="on" 
-				data-whitespace="nowrap" 
-                style="z-index: 5; font-size:24px; font-weight:800; color:#fff;">2024 EMMA India winner</div>
+                data-width="none"
+                data-height="none"
+                data-responsive_offset="on" 
+                data-whitespace="nowrap" 
+                style="z-index: 5; color:#fff;">2024 EMMA India winner</div>
             
             <!-- LAYER -->
-            <div class="tp-caption sfb font-martel text-white text-uppercase tp-resizeme" 
-                data-x="['left','left','left','left']" data-hoffset="['275','15','15','15']" 
-				data-y="['middle','middle','middle','top']" data-voffset="['-80','-50','-50','60']" 
-				data-fontsize="['50','50','40','30']"
-				data-fontweight="['800','800','800','800']"
-				data-lineheight="['24','24','24','24']"
+            <div class="tp-caption sfb font-martel text-white text-uppercase tp-resizeme outline" 
+                data-x="['left','left','left','left']" data-hoffset="['25','25','25','15']"  
+                data-y="['top','top','top','top']" data-voffset="['75','75','75','60']"  
+                data-fontsize="['50','50','40','30']"
+                data-fontweight="['800','800','800','800']"
+                data-lineheight="['24','24','24','24']"
                 data-speed="500" 
                 data-start="750" 
                 data-easing="Power3.easeInOut" 
@@ -327,17 +341,17 @@
                 data-elementdelay="0.0" 
                 data-endelementdelay="0" 
                 data-endspeed="300"
-				data-responsive_offset="on" 
-				data-whitespace="nowrap" 
-                style="z-index: 5; font-size:50px; font-weight:800; color:#fff;">Automotive Audio Solutions</div>
+                data-responsive_offset="on" 
+                data-whitespace="nowrap" 
+                style="z-index: 5; color: #fff;">Car Audio Solutions</div>
             
             <!-- LAYER -->
             <div class="tp-caption sfb font-martel text-left tp-resizeme" 
-                data-x="['left','left','left','left']" data-hoffset="['275','15','15','15']" 
-				data-y="['middle','middle','middle','top']" data-voffset="['0','10','10','100']" 
-				data-fontsize="['16','16','14','14']"
-				data-fontweight="['400','400','400','400']"
-				data-lineheight="['32','32','32','32']"
+                data-x="['left','left','left','left']" data-hoffset="['25','25','25','15']"  
+                data-y="['top','top','top','top']" data-voffset="['145','145','145','130']"  
+                data-fontsize="['16','16','14','14']"
+                data-fontweight="['400','400','400','400']"
+                data-lineheight="['32','32','32','32']"
                 data-speed="500" 
                 data-start="1000" 
                 data-easing="Power3.easeInOut" 
@@ -346,14 +360,14 @@
                 data-elementdelay="0.0" 
                 data-endelementdelay="0.0" 
                 data-endspeed="300" 
-				data-width="['900','800','620','400']"
-				data-height="none"
-				data-responsive_offset="on" 
-				data-whitespace="normal"  
-                style="z-index: 6; color:#fff; font-size:16px; font-weight:normal; line-height:32px;">Car Audio Installation, Custom Fabrication, DSP Tuning and Sound Proofing Solutions</div>
+                data-width="['900','800','600','400']"
+                data-height="none"
+                data-responsive_offset="on" 
+                data-whitespace="normal" 
+                style="z-index: 6; color:#fff; white-space: normal;">Car Audio Installation, Custom Fabrication, DSP Tuning and Sound Proofing Solutions</div>
             
             <!-- LAYER -->
-            <div class="tp-caption sfb tp-resizeme" 
+            <!-- <div class="tp-caption sfb tp-resizeme" 
                 data-x="['left','left','left','left']" data-hoffset="['275','15','15','15']" 
 				data-y="['middle','middle','middle','bottom']" data-voffset="['80','70','70','100']" 
                 data-speed="500"
@@ -367,22 +381,22 @@
 				data-responsive_offset="on" 
 				data-whitespace="nowrap"
 				data-width="['500','500','400','300']" 
-                style="z-index: 7;"><a href="#." class="btn">Read More <span><i class="ion-ios-arrow-thin-right"></i></span></a> </div>
+                style="z-index: 7;"><a href="#." class="btn">Read More <span><i class="ion-ios-arrow-thin-right"></i></span></a> </div> -->
           </li>
 		  
 		  <!-- SLIDE  -->
-          <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" data-thumb="images/carousels/carousel-1.png"> 
+          <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" data-thumb="images/carousels/carousel-7.png"> 
             <!-- MAIN IMAGE --> 
             <img src="images/carousels/carousel-7.png"  alt="slider"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
             <!-- LAYERS --> 
             
             <!-- LAYER -->
-            <div class="tp-caption sfb font-martel text-uppercase tp-resizeme" 
-				data-x="['left','left','left','left']" data-hoffset="['845','300','15','15']" 
-				data-y="['middle','middle','middle','top']" data-voffset="['-150','-100','-100','25']" 
-				data-fontsize="['24','24','24','18']"
-				data-fontweight="['800','800','800','800']"
-				data-lineheight="['24','24','24','24']"
+            <div class="tp-caption sfb font-martel text-uppercase tp-resizeme outline" 
+                data-x="['left','left','left','left']" data-hoffset="['25','25','25','15']"  
+                data-y="['top','top','top','top']" data-voffset="['25','25','25','15']"  
+                data-fontsize="['24','24','24','18']"
+                data-fontweight="['800','800','800','800']"
+                data-lineheight="['24','24','24','24']"
                 data-speed="500" 
                 data-start="500"
                 data-easing="Power3.easeInOut" 
@@ -391,19 +405,19 @@
                 data-elementdelay="0.0" 
                 data-endelementdelay="0" 
                 data-endspeed="300"
-				data-width="none"
-				data-height="none"
-				data-responsive_offset="on" 
-				data-whitespace="nowrap" 
-                style="z-index: 5; font-size:24px; font-weight:800; color:#fff;">2013 EMMA judge trained</div>
+                data-width="none"
+                data-height="none"
+                data-responsive_offset="on" 
+                data-whitespace="nowrap" 
+                style="z-index: 5; color:#fff;">2013 EMMA judge trained</div>
             
             <!-- LAYER -->
-            <div class="tp-caption sfb font-martel text-white text-uppercase tp-resizeme" 
-                data-x="['left','left','left','left']" data-hoffset="['845','300','15','15']" 
-				data-y="['middle','middle','middle','top']" data-voffset="['-80','-50','-50','60']" 
-				data-fontsize="['50','50','40','30']"
-				data-fontweight="['800','800','800','800']"
-				data-lineheight="['24','24','24','24']"
+            <div class="tp-caption sfb font-martel text-white text-uppercase tp-resizeme outline" 
+                data-x="['left','left','left','left']" data-hoffset="['25','25','25','15']"  
+                data-y="['top','top','top','top']" data-voffset="['75','75','75','60']"  
+                data-fontsize="['50','50','40','30']"
+                data-fontweight="['800','800','800','800']"
+                data-lineheight="['24','24','24','24']"
                 data-speed="500" 
                 data-start="750" 
                 data-easing="Power3.easeInOut" 
@@ -412,17 +426,17 @@
                 data-elementdelay="0.0" 
                 data-endelementdelay="0" 
                 data-endspeed="300"
-				data-responsive_offset="on" 
-				data-whitespace="nowrap" 
-                style="z-index: 5; font-size:50px; font-weight:800; color:#fff;">Automotive Audio Solutions</div>
+                data-responsive_offset="on" 
+                data-whitespace="nowrap" 
+                style="z-index: 5; color: #fff;">Car Audio Solutions</div>
             
             <!-- LAYER -->
             <div class="tp-caption sfb font-martel text-left tp-resizeme" 
-                data-x="['left','left','left','left']" data-hoffset="['845','300','15','15']" 
-				data-y="['middle','middle','middle','top']" data-voffset="['0','10','10','100']" 
-				data-fontsize="['16','16','14','14']"
-				data-fontweight="['400','400','400','400']"
-				data-lineheight="['32','32','32','32']"
+                data-x="['left','left','left','left']" data-hoffset="['25','25','25','15']"  
+                data-y="['top','top','top','top']" data-voffset="['145','145','145','130']"  
+                data-fontsize="['16','16','14','14']"
+                data-fontweight="['400','400','400','400']"
+                data-lineheight="['32','32','32','32']"
                 data-speed="500" 
                 data-start="1000" 
                 data-easing="Power3.easeInOut" 
@@ -431,14 +445,14 @@
                 data-elementdelay="0.0" 
                 data-endelementdelay="0.0" 
                 data-endspeed="300" 
-				data-width="['900','800','620','400']"
-				data-height="none"
-				data-responsive_offset="on" 
-				data-whitespace="normal"  
-                style="z-index: 6; color:#fff; font-size:16px; font-weight:normal; line-height:32px;">Car Audio Installation, Custom Fabrication, DSP Tuning and Sound Proofing Solutions</div>
+                data-width="['900','800','600','400']"
+                data-height="none"
+                data-responsive_offset="on" 
+                data-whitespace="normal" 
+                style="z-index: 6; color:#fff; white-space: normal;">Car Audio Installation, Custom Fabrication, DSP Tuning and Sound Proofing Solutions</div>
             
             <!-- LAYER -->
-            <div class="tp-caption sfb tp-resizeme" 
+            <!-- <div class="tp-caption sfb tp-resizeme" 
                 data-x="['left','left','left','left']" data-hoffset="['845','300','15','15']" 
 				data-y="['middle','middle','middle','bottom']" data-voffset="['80','70','70','100']" 
                 data-speed="500"
@@ -452,7 +466,7 @@
 				data-responsive_offset="on" 
 				data-whitespace="nowrap"
 				data-width="['500','500','400','300']" 
-                style="z-index: 7;"><a href="#." class="btn">Read More <span><i class="ion-ios-arrow-thin-right"></i></span></a> </div>
+                style="z-index: 7;"><a href="#." class="btn">Read More <span><i class="ion-ios-arrow-thin-right"></i></span></a> </div> -->
           </li>
           
         </ul>
@@ -469,14 +483,14 @@
       <div class="container"> 
         
         <!-- Heading -->
-        <div class="heading text-center">
-          <h5>Something About Us</h5>
+        <!-- <div class="heading text-center"> -->
+          <!-- <h5>Something About Us</h5> -->
           <!-- <h5>Our Services</h5> -->
-          <hr>
+          <!-- <hr> -->
           <!-- <p>Phasellus imperdiet libero sit amet ante Donec convallis elementum leum </p> -->
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-sm-12 col-xsm-12 col-lg-6">
+        <!-- </div> -->
+        <div class="row"><b>
+          <div class="col-md-12 col-sm-12 col-xsm-12 col-lg-12">
             <p style="font-size: 15px;
     line-height: 24px;
     color: #777777;
@@ -487,7 +501,7 @@
               a recipient of multiple EMMA awards, he personally ensures that every aspect of your car's audio 
               system is installed with precision and tailored to your vehicle's unique acoustics.</p> <br><br>
           </div>
-          <div class="col-md-6 col-sm-12 col-xsm-12 col-lg-6">
+          <div class="col-md-12 col-sm-12 col-xsm-12 col-lg-12">
             <p style="font-size: 15px;
     line-height: 24px;
     color: #777777;
@@ -496,7 +510,7 @@
               standard for excellence. When you choose us, you're not just getting an installation—you're getting 
               the best in the business. With Mr. Imthiyaz's award-winning skills and cutting-edge methods, your car 
               audio dreams will be brought to life with unparalleled sound quality and attention to detail.</p>
-          </div>
+          </div></b>
         </div>
         <!-- SERVICES -->
         
@@ -515,64 +529,86 @@
         </div>
         
         <!-- SERVICES -->
-        <div class="services">
+        <!-- <div class="services">
           <ul class="row">
             
-            <!-- Premium Sound Systems -->
+            
             <li class="col-md-4 col-sm-6 col-xs-6">
               <article>
                 <div class="ser-img"> <img class="img-responsive" src="images/our-services/our-services-1.png" alt="" > 
                   
-                  <!-- Head -->
+                  
                   <div class="ser-head">
                     <div class="icon"><i class="fa fa-volume-up fa-2x" aria-hidden="true" style="color: #fff;"></i></div>
                     <h6>Audio Installation</h6>
                   </div>
                 </div>
-                <!-- Detail -->
+                
                 <div class="detail-in">
                   <p>Enhance your driving experience with top-notch audio systems designed to deliver crystal-clear sound. Our experts provide customized solutions tailored to your vehicle's acoustics.</p>
                   <a href="#." class="go-btn"><i class="ion-ios-arrow-thin-right"></i></a> </div>
               </article>
             </li>
             
-            <!-- Advanced Audio Tuning -->
+            
             <li class="col-md-4 col-sm-6 col-xs-6">
               <article>
                 <div class="ser-img"> <img class="img-responsive" src="images/our-services/our-services-2.png" alt="" > 
                   
-                  <!-- Head -->
+                  
                   <div class="ser-head">
                     <div class="icon"> <img src="images/our-services/ser-icon-2.png" alt="" > </div>
                     <h6>DSP Tuning</h6>
                   </div>
                 </div>
-                <!-- Detail -->
+                
                 <div class="detail-in">
                   <p>Optimize your car's audio setup with precise tuning and calibration. We ensure that every sound frequency is balanced for a perfect listening experience.</p>
                   <a href="#." class="go-btn"><i class="ion-ios-arrow-thin-right"></i></a> </div>
               </article>
             </li>
             
-            <!-- System Upgrades & Repairs -->
+            
             <li class="col-md-4 col-sm-6 col-xs-6">
               <article>
                 <div class="ser-img"> <img class="img-responsive" src="images/our-services/our-services-3.png" alt="" > 
                   
-                  <!-- Head -->
+                  
                   <div class="ser-head">
                     <div class="icon"> <img src="images/our-services/ser-icon-6.png" alt="" > </div>
                     <h6>Custome Fabrication</h6>
                   </div>
                 </div>
-                <!-- Detail -->
+                
                 <div class="detail-in">
                   <p>Upgrade your existing car audio system with the latest technology or get repairs done by our skilled technicians. We handle everything from minor fixes to major enhancements.</p>
                   <a href="#." class="go-btn"><i class="ion-ios-arrow-thin-right"></i></a> </div>
               </article>
             </li>
           </ul>
-        </div>
+        </div> -->
+        <div class="card-container">
+          <div class="card">
+              <img src="images/our-services/our-services-1.png" alt="Audio Installation">
+              <h3>Audio Installation</h3>
+              <p>Enhance your driving experience with top-notch audio systems designed to deliver crystal-clear sound. Our experts provide customized solutions tailored to your vehicle's acoustics.</p>
+          </div>
+          <div class="card">
+              <img src="images/our-services/our-services-2.png" alt="DSP Tuning">
+              <h3>DSP Tuning</h3>
+              <p>Optimize your car's audio setup with precise tuning and calibration. We ensure that every sound frequency is balanced for a perfect listening experience.</p>
+          </div>
+          <div class="card">
+              <img src="images/our-services/our-services-3.png" alt="Custom Fabrication">
+              <h3>Custom Fabrication</h3>
+              <p>Upgrade your existing car audio system with the latest technology or get repairs done by our skilled technicians. We handle everything from minor fixes to major enhancements.</p>
+          </div>
+          <div class="card">
+              <img src="images/our-services/our-services-2.png" alt="Additional Service">
+              <h3>Acoustic Damping</h3>
+              <p>Enhance your car audio experience with our acoustic damping service, designed to minimize road noise and vibrations. Enjoy crystal-clear sound quality and a quieter ride by optimizing your vehicle's interior acoustics.</p>
+          </div>
+      </div>
       </div>
     </section>
     
@@ -687,7 +723,7 @@
           <div class="row"> 
             
             <!-- About -->
-            <div class="col-md-6 col-sm-12 col-xs-12"> <img class="margin-bottom-30" src="images/logo/audio-tunerz-white-logo.png" alt="" >
+            <div class="col-md-6 col-sm-12 col-xs-12"> <img class="margin-bottom-30" src="images/logo/audio-tunerz-white-logo.jpg" alt="logo" style="width: 352px;">
               <p>At Audio Tunerz Car Audio, we specialize in delivering high-performance sound systems that transform your driving experience. With top-tier products and expert installation, we bring clarity, power, and precision to your vehicle’s audio. Trust us to elevate your in-car entertainment with innovative solutions tailored to your needs.</p>
             </div>
             
@@ -695,13 +731,11 @@
             <div class="col-md-6 col-sm-12 col-xs-12">
               <h6>Useful Links</h6>
               <ul class="links">
-                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="audio-installation.html">Audio Installation</a></li>
-                <li><a href="#">Advanced Sound Quality Analysis</a></li>
                 <li><a href="dsp-tuning.html">DSP Tuning</a></li>
                 <li><a href="custom-fabrication.html">Custom Fabrication</a></li>
-                <li><a href="sound-proofing-solutions.html">Sound Proofing Solutions</a></li>
+                <li><a href="sound-proofing-solutions.html">Acoustic Damping</a></li>
                 <li><a href="gallery.html">Photo Gallery</a></li>
                 <li><a href="reviews.html">Reviews </a></li>
                 <li><a href="contact.html">Contact Us</a></li>
