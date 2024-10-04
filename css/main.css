@@ -4346,3 +4346,29 @@ input[type="radio"] .styled:checked + label::after {
 .letter-space-10 {
     letter-spacing: 10px;
 }
+
+
+
+
+/* logo */
+
+
+
+.logo {
+    display: flex;
+    justify-content: left; /* Center horizontally */
+    align-items: left; /* Center vertically if needed */
+    width: 100%; /* Ensure it takes the full width */
+}
+
+.img-responsive {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+@media (max-width: 768px) { /* Adjust the max-width as needed */
+    .logo {
+        justify-content: center;
+    }
+}

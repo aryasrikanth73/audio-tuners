@@ -28,13 +28,6 @@
 <!-- <link href='https://fonts.googleapis.com/css?family=Martel+Sans:400,200,300,600,700,800,900|Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'> -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 <style>
    .outline {
     font-weight: bold;
@@ -46,6 +39,9 @@
         1px 1px 0 #000; 
     margin: 20px 0;
     line-height: 1.2;
+}
+.card a{
+  text-decoration: none;
 }
 </style>
 </head>
@@ -97,46 +93,7 @@
     
     <!-- Logo -->
     <div class="container">
-      <div class="logo"> <a href="#."><img  class="img-responsive" src="images/logo/audio-tunerz-logo.png" alt="Audio Tunzer" style="width: 252px; height: 67px;"></a> </div>
-      
-      <!-- INFO -->
-      <!-- <div class="top-info-con">
-        <ul>
-          
-          
-          <li>
-            <div class="media-left">
-              <div class="icon"> <i class="icon-call-in"></i></div>
-            </div>
-            <div class="media-body">
-              <h6>Call Us Now </h6>
-              <p>+91 97031 61007 </p>
-            </div>
-          </li>
-          
-          
-          <li>
-            <div class="media-left">
-              <div class="icon"> <i class="icon-envelope-open"></i></div>
-            </div>
-            <div class="media-body">
-              <h6>Email us</h6>
-              <p>info@mail.com</p>
-            </div>
-          </li>
-          
-          
-          <li>
-            <div class="media-left">
-              <div class="icon"> <i class="icon-clock"></i></div>
-            </div>
-            <div class="media-body">
-              <h6>Opening Hours </h6>
-              <p>Mon - Sat : 9am to 7pm</p>
-            </div>
-          </li>
-        </ul>
-      </div> -->
+      <div class="logo"> <a href="#."><img  class="img-responsive" src="images/logo/audio-tunerz-logo.png" alt="Audio Tunzer" style="width: 300px; height: 80px;"></a> </div>
     </div>
     
     <!-- Navigation -->
@@ -483,85 +440,34 @@
           <hr>
         </div>
         
-        <!-- SERVICES -->
-        <!-- <div class="services">
-          <ul class="row">
-            
-            
-            <li class="col-md-4 col-sm-6 col-xs-6">
-              <article>
-                <div class="ser-img"> <img class="img-responsive" src="images/our-services/our-services-1.png" alt="" > 
-                  
-                  
-                  <div class="ser-head">
-                    <div class="icon"><i class="fa fa-volume-up fa-2x" aria-hidden="true" style="color: #fff;"></i></div>
-                    <h6>Audio Installation</h6>
-                  </div>
-                </div>
-                
-                <div class="detail-in">
-                  <p>Enhance your driving experience with top-notch audio systems designed to deliver crystal-clear sound. Our experts provide customized solutions tailored to your vehicle's acoustics.</p>
-                  <a href="#." class="go-btn"><i class="ion-ios-arrow-thin-right"></i></a> </div>
-              </article>
-            </li>
-            
-            
-            <li class="col-md-4 col-sm-6 col-xs-6">
-              <article>
-                <div class="ser-img"> <img class="img-responsive" src="images/our-services/our-services-2.png" alt="" > 
-                  
-                  
-                  <div class="ser-head">
-                    <div class="icon"> <img src="images/our-services/ser-icon-2.png" alt="" > </div>
-                    <h6>DSP Tuning</h6>
-                  </div>
-                </div>
-                
-                <div class="detail-in">
-                  <p>Optimize your car's audio setup with precise tuning and calibration. We ensure that every sound frequency is balanced for a perfect listening experience.</p>
-                  <a href="#." class="go-btn"><i class="ion-ios-arrow-thin-right"></i></a> </div>
-              </article>
-            </li>
-            
-            
-            <li class="col-md-4 col-sm-6 col-xs-6">
-              <article>
-                <div class="ser-img"> <img class="img-responsive" src="images/our-services/our-services-3.png" alt="" > 
-                  
-                  
-                  <div class="ser-head">
-                    <div class="icon"> <img src="images/our-services/ser-icon-6.png" alt="" > </div>
-                    <h6>Custome Fabrication</h6>
-                  </div>
-                </div>
-                
-                <div class="detail-in">
-                  <p>Upgrade your existing car audio system with the latest technology or get repairs done by our skilled technicians. We handle everything from minor fixes to major enhancements.</p>
-                  <a href="#." class="go-btn"><i class="ion-ios-arrow-thin-right"></i></a> </div>
-              </article>
-            </li>
-          </ul>
-        </div> -->
         <div class="card-container">
           <div class="card">
+            <a href="audio-installation.html">
               <img src="images/installation/installation-8.png" alt="Audio Installation">
               <h3>Audio Installation</h3>
               <p>Enhance your driving experience with top-notch audio systems designed to deliver crystal-clear sound. Our experts provide customized solutions tailored to your vehicle's acoustics.</p>
+              </a>
           </div>
           <div class="card">
+            <a href="dsp-tuning.html">
               <img src="images/dsp-tuning/dsp-tuning-3.png" alt="DSP Tuning">
               <h3>DSP Tuning</h3>
               <p>Optimize your car's audio setup with precise tuning and calibration. We ensure that every sound frequency is balanced for a perfect listening experience.</p>
+              </a>
           </div>
           <div class="card">
+            <a href="custom-fabrication.html">
               <img src="images/fabrication/fabication-1.png" alt="Custom Fabrication">
               <h3>Custom Fabrication</h3>
               <p>Upgrade your existing car audio system with the latest technology or get repairs done by our skilled technicians. We handle everything from minor fixes to major enhancements.</p>
+              </a>
           </div>
           <div class="card">
+            <a href="sound-proofing-solutions.html">
               <img src="images/sound-damping/sound-damping-4.png" alt="Additional Service">
               <h3>Acoustic Damping</h3>
               <p>Enhance your car audio experience with our acoustic damping service, designed to minimize road noise and vibrations. Enjoy crystal-clear sound quality and a quieter ride by optimizing your vehicle's interior acoustics.</p>
+              </a>
           </div>
       </div>
       </div>
