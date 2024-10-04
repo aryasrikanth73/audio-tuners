@@ -72,6 +72,66 @@
         .nav.ownmenu > li:hover > a[href="#"]:after {
           content: '\25B2'; 
         }
+
+
+        .gallery-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Space between images */
+}
+
+.gallery img {
+    max-width: calc(33% - 10px); /* Three images per row with some gap */
+    height: auto;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+@media (max-width: 768px) {
+    .gallery img {
+        max-width: calc(50% - 10px); /* Two images per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery img {
+        max-width: 100%; /* One image per row on extra small screens */
+    }
+}
+
      </style>
     <nav class="navbar">
       <div class="container">
@@ -104,102 +164,96 @@
         <img src="images/sub-bnr-hr.png" alt="" > </div>
     </div>
   </section>
+  <section class="gallery-section">
+    <h2>Gallery</h2>
     <nav>
         <ul id="nav-links"></ul>
     </nav>
-
     <div id="gallery" class="gallery"></div>
+</section>
 
     <script>
         const categories = [
-            'dsp-tuning', 
-            'fabrication', 
-            'installation', 
-            'showroom', 
-            'sound-damping', 
-            'trainings-events'
-        ];
-    
-        const imagesPerCategory = {};
-    
-        // Function to check if an image exists
-        function checkImageExists(url) {
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.src = url;
-                img.onload = () => resolve(true);  // Image exists
-                img.onerror = () => resolve(false); // Image does not exist
-            });
-        }
-    
-        // Dynamically generate image paths for each category
-        async function loadImages() {
-            for (const category of categories) {
-                imagesPerCategory[category] = [];
-                let index = 1;
-    
-                // Check images until we don't find one
-                while (true) {
-                    const imagePath = `images/${category}/${category}-${index}.png`;
-                    const exists = await checkImageExists(imagePath);
-    
-                    if (exists) {
-                        imagesPerCategory[category].push(`${category}/${category}-${index}.png`);
-                        console.log(`Loaded image for category "${category}": ${category}-${index}.png`); // Log the image filename
-                        index++;
-                    } else {
-                        break; // Stop if an image does not exist
-                    }
-                }
+    'dsp-tuning', 
+    'fabrication', 
+    'installation', 
+    'showroom', 
+    'sound-damping', 
+    'trainings-events'
+];
+
+const imagesPerCategory = {};
+
+function checkImageExists(url) {
+    return new Promise((resolve) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+    });
+}
+
+async function loadImages() {
+    for (const category of categories) {
+        imagesPerCategory[category] = [];
+        let index = 1;
+        
+        while (true) {
+            const imagePath = `images/${category}/${category}-${index}.png`;
+            const exists = await checkImageExists(imagePath);
+            if (exists) {
+                imagesPerCategory[category].push(`${category}/${category}-${index}.png`);
+                index++;
+            } else {
+                break;
             }
         }
+    }
+}
+
+function createNav() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.innerHTML = '<li><a href="#" onclick="showAll()">All Images</a></li>';
     
-        function createNav() {
-            const navLinks = document.getElementById('nav-links');
-            navLinks.innerHTML = '<li><a href="#" onclick="showAll()">All Images</a></li>'; // Link for showing all images
-    
-            categories.forEach(category => {
-                const li = document.createElement('li');
-                li.innerHTML = `<a href="#" onclick="showCategory('${category}')">${category.replace('-', ' ').toUpperCase()}</a>`;
-                navLinks.appendChild(li);
-            });
-        }
-    
-        function showCategory(category) {
-            const gallery = document.getElementById('gallery');
-            gallery.innerHTML = ''; // Clear existing images
-    
-            const images = imagesPerCategory[category] || [];
-            images.forEach(image => {
-                const imgElement = document.createElement('img');
-                imgElement.src = `images/${image}`;
-                imgElement.alt = category;
-                gallery.appendChild(imgElement);
-            });
-        }
-    
-        function showAll() {
-            const gallery = document.getElementById('gallery');
-            gallery.innerHTML = ''; // Clear existing images
-    
-            // Show all images
-            categories.forEach(category => {
-                imagesPerCategory[category].forEach(image => {
-                    const imgElement = document.createElement('img');
-                    imgElement.src = `images/${image}`;
-                    imgElement.alt = category;
-                    gallery.appendChild(imgElement);
-                });
-            });
-        }
-    
-        // Create navigation links dynamically
-        createNav();
-    
-        // Load images and show all images by default
-        loadImages().then(() => {
-            showAll();
+    categories.forEach(category => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="#" onclick="showCategory('${category}')">${category.replace('-', ' ').toUpperCase()}</a>`;
+        navLinks.appendChild(li);
+    });
+}
+
+function showCategory(category) {
+    const gallery = document.getElementById('gallery');
+    gallery.innerHTML = '';
+
+    const images = imagesPerCategory[category] || [];
+    images.forEach(image => {
+        const imgElement = document.createElement('img');
+        imgElement.src = `images/${image}`;
+        imgElement.alt = category;
+        gallery.appendChild(imgElement);
+    });
+}
+
+function showAll() {
+    const gallery = document.getElementById('gallery');
+    gallery.innerHTML = '';
+
+    categories.forEach(category => {
+        imagesPerCategory[category].forEach(image => {
+            const imgElement = document.createElement('img');
+            imgElement.src = `images/${image}`;
+            imgElement.alt = category;
+            gallery.appendChild(imgElement);
         });
+    });
+}
+
+createNav();
+loadImages().then(() => {
+    showAll();
+});
+
     </script>
     
   <!--======= FOOTER =========-->
