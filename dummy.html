@@ -20,7 +20,6 @@
 <link href='https://fonts.googleapis.com/css?family=Martel+Sans:400,200,300,600,700,800,900|Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<style></style>
 <body>
   <div id="whatsapp-widget">
     <a href="https://wa.me/919908805551" target="_blank" class="whatsapp-icon">
@@ -72,66 +71,6 @@
         .nav.ownmenu > li:hover > a[href="#"]:after {
           content: '\25B2'; 
         }
-
-
-        .gallery-section {
-    padding: 20px;
-    text-align: center;
-}
-
-.gallery-section h2 {
-    margin-bottom: 20px;
-}
-
-.nav-links {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.nav-links li {
-    margin: 0 10px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px; /* Space between images */
-}
-
-.gallery img {
-    max-width: calc(33% - 10px); /* Three images per row with some gap */
-    height: auto;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    transition: transform 0.3s;
-}
-
-.gallery img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-}
-
-@media (max-width: 768px) {
-    .gallery img {
-        max-width: calc(50% - 10px); /* Two images per row on smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery img {
-        max-width: 100%; /* One image per row on extra small screens */
-    }
-}
-
      </style>
     <nav class="navbar">
       <div class="container">
@@ -164,13 +103,180 @@
         <img src="images/sub-bnr-hr.png" alt="" > </div>
     </div>
   </section>
-  <section class="gallery-section">
-    <h2>Gallery</h2>
-    <nav>
-        <ul id="nav-links"></ul>
-    </nav>
-    <div id="gallery" class="gallery"></div>
-</section>
+    <style>
+        .gallery-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .gallery-nav {
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap in smaller screens */
+}
+
+.nav-links li {
+    margin: 5px; /* Reduce margin for smaller screens */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .gallery-nav {
+        margin-bottom: 20px;
+    }
+
+    .nav-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 equal boxes in a row */
+        gap: 10px; /* Space between boxes */
+    }
+
+    .nav-links li {
+        list-style: none;
+    }
+
+    .nav-links a {
+        display: flex; /* Center content */
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        padding: 5px !important; 
+        border: 1px solid #007bff;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+        height: 100%; /* Ensure full height of the grid cell */
+    }
+
+    .nav-links a:hover {
+        background-color: #007bff;
+        color: white;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links a {
+        padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Smaller font size */
+    }
+}
+
+
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .gallery img {
+            max-width: calc(33% - 10px);
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .slider {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: opacity 0.5s;
+        }
+
+        .slider.hidden {
+            display: none;
+        }
+
+        .slider-img {
+            width: 65%;  /* Increased for larger display */
+            height: 65%; /* Increased for larger display */
+            object-fit: contain; /* Ensures the aspect ratio is maintained */
+        }
+
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+        }
+
+        .slider-controls span {
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery img {
+                max-width: calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* .gallery img {
+                max-width: 100%;
+            } */
+        }
+    </style>
+    <section class="gallery-section">
+        <h2>Gallery</h2>
+        <div class="gallery-nav">
+            <ul id="nav-links" class="nav-links"></ul>
+        </div>
+        <div id="gallery" class="gallery"></div>
+        <div id="slider" class="slider hidden" onclick="closeSlider(event)">
+            <img class="slider-img" id="slider-img" src="" alt="">
+            <div class="slider-controls">
+                <span class="prev" onclick="changeSlide(-1); event.stopPropagation()">&#10094;</span>
+                <span class="next" onclick="changeSlide(1); event.stopPropagation()">&#10095;</span>
+            </div>
+        </div>
+        
+    </section>
 
     <script>
         const categories = [
@@ -183,6 +289,8 @@
 ];
 
 const imagesPerCategory = {};
+let currentSlideIndex = 0;
+let currentCategory = '';
 
 function checkImageExists(url) {
     return new Promise((resolve) => {
@@ -222,6 +330,45 @@ function createNav() {
     });
 }
 
+function openSlider(imageSrc, category) {
+    currentCategory = category; // Track the current category
+    const slider = document.getElementById('slider');
+    const sliderImg = document.getElementById('slider-img');
+    sliderImg.src = imageSrc;
+    slider.classList.remove('hidden');
+
+    // Set currentSlideIndex based on the selected image
+    currentSlideIndex = imagesPerCategory[category].indexOf(imageSrc.replace(`images/`, ''));
+}
+
+function closeSlider(event) {
+    // Check if the click is on the background and not on buttons
+    if (event.target === document.getElementById('slider')) {
+        const slider = document.getElementById('slider');
+        slider.classList.add('hidden');
+    }
+}
+
+function changeSlide(direction) {
+    const images = imagesPerCategory[currentCategory] || []; // Use the current category's images
+    
+    if (images.length === 0) return; // No images to show
+
+    // Update the currentSlideIndex based on direction
+    currentSlideIndex += direction;
+
+    // Check bounds
+    if (currentSlideIndex < 0) {
+        currentSlideIndex = 0; // Don't go below first image
+    } else if (currentSlideIndex >= images.length) {
+        currentSlideIndex = images.length - 1; // Don't go beyond last image
+    }
+
+    // Update the slider image
+    const sliderImg = document.getElementById('slider-img');
+    sliderImg.src = `images/${images[currentSlideIndex]}`;
+}
+
 function showCategory(category) {
     const gallery = document.getElementById('gallery');
     gallery.innerHTML = '';
@@ -231,6 +378,7 @@ function showCategory(category) {
         const imgElement = document.createElement('img');
         imgElement.src = `images/${image}`;
         imgElement.alt = category;
+        imgElement.onclick = () => openSlider(imgElement.src, category); // Pass category to openSlider
         gallery.appendChild(imgElement);
     });
 }
@@ -244,6 +392,7 @@ function showAll() {
             const imgElement = document.createElement('img');
             imgElement.src = `images/${image}`;
             imgElement.alt = category;
+            imgElement.onclick = () => openSlider(imgElement.src, category); // Pass category to openSlider
             gallery.appendChild(imgElement);
         });
     });
